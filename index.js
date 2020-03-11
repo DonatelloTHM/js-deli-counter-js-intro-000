@@ -1,30 +1,25 @@
-function takeANumber(line,name)
-{
+function takeANumber(line,name){
   line.push(name);
-  return `Welcome, ${name}. You are number ${line.length} in line.`;
+  return `Welcome, ${name}. You are number ${line.length} in line.`
 }
-function nowServing(line)
-{
-  if(!line.length)
-  {
-    return "There is nobody waiting to be served!";
+function nowServing(line){
+  if(!line.length){
+    return "There is nobody waiting to be served!"
   }
   else {
-    return `Currently serving ${line.shift()}.`;
+    return `Currently serving ${line.shift()}.`
   }
 }
-function currentLine(line)
-{
+function currentLine(line){
   if(!line.length)
   {
-    return "The line is currently empty.";
+    return "The line is currently empty."
   }
   else{
-    var cloneLineWithNumbers=[];
-    for(var i=0;i<line.length;i++)
-    {
-      cloneLineWithNumbers[i]=`${i+1}. ${line[i]}`;
+    const nameWithNumber=[]; //1. firstperson,2.second....
+    for(let i=0;i<line.length;i++){
+      nameWithNumber.push(`${i+1}. ${line[i]}`);
     }
-    return "The line is currently: "+cloneLineWithNumbers.join(", ");
+    return `The line is currently: ${nameWithNumber.join(', ')}`;
   }
 }
